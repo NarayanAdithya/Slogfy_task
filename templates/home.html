@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slogfy IOT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body class="bg-black" >
+    <h1 align="center" class=" m-4 font-serif text-4xl text-white font-50">Slogfy App</h1>
+    <div class="m-20 ">
+        <h4 class="text-blue-800 font-mono text-5xl align-middle underline">Data</h4>
+        <div class="relative rounded-xl overflow-auto">
+            <div class="shadow-sm overflow-hidden my-8">
+              <table class="border-collapse table-fixed w-full text-sm">
+                <thead>
+                  <tr>
+                    <th class="border-b dark:border-gray-600 font-medium p-4 pl-8 pt-0 pb-3 text-gray-400 dark:text-gray-200 text-left">S. No.</th>
+                    <th class="border-b dark:border-gray-600 font-medium p-4 pt-0 pb-3 text-gray-400 dark:text-gray-200 text-left">Data</th>
+                    <th class="border-b dark:border-gray-600 font-medium p-4 pr-8 pt-0 pb-3 text-gray-400 dark:text-gray-200 text-left">Time</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white bg-gray-800">
+                    {% for i in data %}
+                  <tr class="hover:bg-slate-700 hover:text-slate-50">
+                    <td class=" border-b border-gray-100 dark:border-gray-700 p-4 pl-8 text-gray-500 dark:text-gray-400">{{loop.index}}</td>
+                    <td class=" border-b overflow-auto  border-gray-100 dark:border-gray-700 p-4 text-gray-500 dark:text-gray-400">{{i.data}}</td>
+                    <td class=" border-b border-gray-100 dark:border-gray-700 p-4 pr-8 text-gray-500 dark:text-gray-400">{{i.timestamp}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+    
+</body>
+</html>
